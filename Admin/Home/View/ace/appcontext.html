@@ -46,6 +46,18 @@
 			  el.className = "editable img-responsive";
 			  return el;
 		}
+		
+		function mediaFormat( value, options ){
+				  //var el = document.createElement("audio");
+				  //el.src = '../../../Public/assets/media/test.mp3';
+				  //el.setAttribute("controls", "controls");
+			var insert = '<span class="btn btn-success fileinput-button">\
+					<i class="glyphicon glyphicon-plus"></i>\
+					<span>Add files...</span>\
+					<input id="fileupload" type="file" name="files[]">\
+				</span>';
+				  return insert;
+			}
 	  
 		function qrset(elem, operation, value){
 		    if(operation === 'get') {
@@ -62,10 +74,16 @@
 		        $('img',elem).val(value);
 		     }
 	    }  
-	  
+		function mediaset(elem, operation, value){
+			if(operation === 'get') {
+			        return $(elem).val();
+			     } else if(operation === 'set') {
+			        $('img',elem).val(value);
+			     }
+	    }
 		 var grid_data = 
 	[ 
-		{id:"1",name:"青花瓷",picture:"<img src=\"../../../Public/assets/avatars/profile-pic.jpg\" width=\"50px\" height=\"50px\">",qr:"<img src=\"../../../Public/assets/avatars/profile-pic.jpg\" width=\"50px\" height=\"50px\">",note:"note",media:" "}
+		{id:"1",name:"青花瓷",picture:"<img src=\"../../../Public/assets/avatars/profile-pic.jpg\" width=\"50px\" height=\"50px\">",qr:"<img src=\"../../../Public/assets/avatars/profile-pic.jpg\" width=\"50px\" height=\"50px\">",note:"note",media:"<audio src=\"../../../Public/assets/media/test.mp3\" controls=\"controls\"></audio>"}
 		//{id:"2",name:"Laptop",note:"Long text ",gender:"Yes",email:"InTime",birthday:"2007-12-03", phone:""},
 		//{id:"3",name:"LCD Monitor",note:"note3",gender:"Yes",email:"TNT",birthday:"2007-12-03", phone:""},
 		//{id:"4",name:"Speakers",note:"note",gender:"No",email:"ARAMEX",birthday:"2007-12-03", phone:""},
@@ -172,7 +190,7 @@
 				{name:'name',index:'name', width:100,editable: true},
 				{name:'picture',index:'picture',width:60, editable:true,edittype:'custom',editoptions:{custom_element:imageFormat,  custom_value:imageset},unformat:imgEdit},
 				{name:'qr',index:'qr',width:60, editable:true,edittype:'custom',editoptions:{custom_element:qrFormat,  custom_value:qrset},unformat:imgEdit},
-				{name:'media',index:'media', width:100,editable: true,editoptions:{size:"20",maxlength:"30"}},
+				{name:'media',index:'media', width:100,editable: true,edittype:'custom',editoptions:{custom_element:mediaFormat,  custom_value:mediaset},unformat:mediaEdit},
 				{name:'note',index:'note', width:150, sortable:false,editable: true,edittype:"textarea", editoptions:{rows:"2",cols:"20"}} 
 			], 
 	
@@ -304,6 +322,20 @@
 				}
 			})
 			}, 0);
+		}
+		function mediaEdit( cellvalue, options, cell ) {
+				setTimeout(function(){
+					$(cell) .find('input[type=button]')
+					.addClass('btn btn-white btn-default')
+					.css({"font-style": "normal",
+						"font-size":"13px",
+						"height":"40px",
+						"width":"65px",
+						"align":"center",
+						"border-bottom-style":"solid"});
+					//.after('<span class="lbl"></span>');
+
+				}, 0);
 		}
 		//switch element when editing inline
 		function aceSwitch( cellvalue, options, cell ) {
