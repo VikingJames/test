@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="../../../Public/assets/css/ui.jqgrid.css" />
 <link rel="stylesheet" href="../../../Public/assets/css/bootstrap-editable.css" />
 <link rel="stylesheet" href="../../../Public/assets/css/jquery.fileupload.css" />
+<link rel="stylesheet" href="../../../Public/assets/css/jquery.fileupload-ui.css"/>
 
 <div class="row">
 	<div class="col-xs-12">
@@ -24,7 +25,25 @@
 
 <!-- page specific plugin scripts -->
 <script type="text/javascript">
-	var scripts = [null,"../../../Public/assets/js/date-time/bootstrap-datepicker.min.js","../../../Public/assets/js/jqGrid/jquery.jqGrid.min.js","../../../Public/assets/js/jqGrid/i18n/grid.locale-cn.js","../../../Public/assets/js/x-editable/bootstrap-editable.min.js","../../../Public/assets/js/x-editable/ace-editable.min.js", null]
+	var scripts = [null,"../../../Public/assets/js/date-time/bootstrap-datepicker.min.js",
+			    "../../../Public/assets/js/jqGrid/jquery.jqGrid.min.js",
+			    "../../../Public/assets/js/jqGrid/i18n/grid.locale-cn.js",
+			    "../../../Public/assets/js/x-editable/bootstrap-editable.min.js",
+			    "../../../Public/assets/js/x-editable/ace-editable.min.js",
+			    "../../../Public/assets/js/upload/vendor/jquery.ui.widget.js",
+			    "../../../Public/assets/js/upload/jquery.fileupload.js",
+			    "../../../Public/assets/js/upload/jquery.iframe-transport.js",
+	                    "../../../Public/assets/js/upload/jquery.fileupload-process.js",
+	                    "../../../Public/assets/js/upload/jquery.fileupload-image.js",
+	                    "../../../Public/assets/js/upload/jquery.fileupload-audio.js",
+	                    "../../../Public/assets/js/upload/jquery.fileupload-video.js",
+	                    "../../../Public/assets/js/upload/jquery.fileupload-validate.js",
+	                    "../../../Public/assets/js/upload/jquery.fileupload-ui.js",
+	                    "../../../Public/assets/js/upload/main.js",
+	                    "//blueimp.github.io/JavaScript-Templates/js/tmpl.min.js",
+	                    "//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js",
+	                    "//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js",
+	                    "//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js", null]
 	ace.load_ajax_scripts(scripts, function() {
 		//editables on first profile page
 		$.fn.editable.defaults.mode = 'inline';
