@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//Admin/Home/Conf/config.php=UTF-8
+encoding//Admin/Home/Controller/LoginController.class.php=UTF-8
+encoding//Admin/Home/Model/UserModel.class.php=UTF-8
+encoding//Admin/Home/View/ace/admins.html=UTF-8
+encoding//Admin/Home/View/ace/ajax.html=UTF-8
+encoding//Admin/Home/View/ace/appcontext.html=UTF-8
+encoding//Admin/Home/View/ace/index.html=UTF-8
+encoding//Admin/Home/View/ace/map.html=UTF-8
+encoding//Admin/Home/View/ace/profile.html=UTF-8
+encoding//Admin/Home/View/ace/users.html=UTF-8
